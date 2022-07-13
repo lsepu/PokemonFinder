@@ -1,9 +1,20 @@
-import React from 'react'
+import React from "react";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../state/store";
+import { login } from "../state/user/userSlice";
 
 const Login = () => {
-  return (
-    <div>Login</div>
-  )
-}
+  const dispatch = useDispatch<AppDispatch>();
 
-export default Login
+  const loginUser = () => {
+    dispatch(login());
+  };
+
+  return (
+    <div>
+      <button onClick={loginUser}>Enter</button>
+    </div>
+  );
+};
+
+export default Login;
