@@ -14,6 +14,7 @@ const NavBar : React.FC<ILogged> = ({ logged }) => {
     dispatch(logout());
   };
 
+  //TODO: Change img route
   return (
     <div>
       <Navbar bg="dark">

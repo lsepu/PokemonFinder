@@ -5,14 +5,17 @@ import { useNavigate } from "react-router-dom";
 import { Button, Container } from "react-bootstrap";
 import { useEffect } from "react";
 import { ILogged } from "../routes/PokemonRoutes";
+import { getPokemons } from "../state/pokemon/actions";
 
 
 const Login : React.FC<ILogged> = ({ logged }) => {
   const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
 
+  //TODO: Resolve error
   const loginUser = () => {
     dispatch(login());
+    dispatch(getPokemons());
     navigate("/list");
   };
 
@@ -20,6 +23,7 @@ const Login : React.FC<ILogged> = ({ logged }) => {
     logged && navigate("/list");
   }, []);
 
+  //TODO: Change img route
   return (
     <Container style={{ marginTop: "35px", textAlign: "center" }}>
       <h2 style={{ marginBottom: "20px", fontWeight: "bold" }}>

@@ -8,7 +8,6 @@ import thunk from 'redux-thunk';
 const persistConfig = {
   key: "root",
   storage,
-  blacklist: ['pokemon']
 };
 
 const rootReducer = combineReducers({
