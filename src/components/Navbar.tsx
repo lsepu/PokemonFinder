@@ -5,6 +5,7 @@ import { ILogged } from "../routes/PokemonRoutes";
 import { AppDispatch, stateType } from "../state/store";
 import { logout } from "../state/user/userSlice";
 import logo from '../assets/pokelogo.png'
+import { clearPokemons } from "../state/pokemon/pokemonSlice";
 
 
 const NavBar : React.FC<ILogged> = ({ logged }) => {
@@ -13,6 +14,7 @@ const NavBar : React.FC<ILogged> = ({ logged }) => {
 
   const logoutUser = () => {
     dispatch(logout());
+    dispatch(clearPokemons());
   };
 
   return (

@@ -24,7 +24,6 @@ const Login : React.FC<ILogged> = ({ logged }) => {
     logged && navigate("/list");
   }, []);
 
-  //TODO: Change img route
   return (
     <Container style={{ marginTop: "35px", textAlign: "center" }}>
       <h2 style={{ marginBottom: "20px", fontWeight: "bold" }}>

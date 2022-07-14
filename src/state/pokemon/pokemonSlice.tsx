@@ -24,13 +24,19 @@ const initialState: IPokemon = {
 export const pokemonSlice = createSlice({
   name: "pokemon",
   initialState,
-  reducers: {},
+  reducers: {
+    clearPokemons: (state) => {
+      state.pokemons = [...initialState.pokemons]
+    }
+  },
   extraReducers: (builder) => {
     builder.addCase(getPokemons.fulfilled, (state, action) => {
         state.pokemons = action.payload;
       });
   }
 });
+
+export const { clearPokemons } = pokemonSlice.actions;
 
 export default pokemonSlice.reducer;
 

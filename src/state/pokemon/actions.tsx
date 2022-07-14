@@ -1,6 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-//TODO: Change any
 export const getPokemons = createAsyncThunk(
   "pokemons/getPokemons",
   async () => {
@@ -30,7 +29,6 @@ const getAllPokemons = async () => {
   return formattedResponse.results;
 };
 
-//TODO: Change any
 export const getTypes = (typesObject: any) => {
   const types: any = [];
   typesObject.forEach((typeObj: any) => {

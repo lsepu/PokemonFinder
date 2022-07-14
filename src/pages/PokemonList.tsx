@@ -1,4 +1,4 @@
-import { Badge, Card, Col, Container, Row } from "react-bootstrap";
+import {Container} from "react-bootstrap";
 import ListOfPokemon from "../components/ListOfPokemon";
 
 const PokemonList = () => {
