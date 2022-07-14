@@ -1,14 +1,12 @@
 import { Button, Container, Nav, Navbar, NavItem } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { ILogged } from "../routes/PokemonRoutes";
 import { AppDispatch, stateType } from "../state/store";
 import { logout } from "../state/user/userSlice";
 
-interface INavbar {
-  logged: boolean;
-}
 
-const NavBar = ({ logged }: INavbar) => {
+const NavBar : React.FC<ILogged> = ({ logged }) => {
   const dispatch = useDispatch<AppDispatch>();
   const { name } = useSelector((state: stateType) => state.user);
 

@@ -1,10 +1,7 @@
 import { Navigate, Outlet } from "react-router-dom";
+import { ILogged } from "./PokemonRoutes";
 
-interface IPrivateRoute {
-  logged: boolean;
-}
-
-const PrivateRoute = ({ logged }: IPrivateRoute) => {
+const PrivateRoute : React.FC<ILogged> = ({ logged }) => {
   if (!logged) {
     return <Navigate to="/login" replace />;
   }

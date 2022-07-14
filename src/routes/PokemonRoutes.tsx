@@ -14,7 +14,7 @@ const PokemonRoutes = () => {
   return (
     <>
       <BrowserRouter>
-      <NavBar logged={logged}/>
+        <NavBar logged={logged} />
         <Routes>
           <Route
             path="/"
@@ -25,7 +25,7 @@ const PokemonRoutes = () => {
             <Route path="/search" element={<PokemonSearch />} />
             <Route path="/search/:pokemon" element={<Pokemon />} />
           </Route>
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Login logged={logged}/>} />
           <Route
             path="*"
             element={
@@ -39,5 +39,9 @@ const PokemonRoutes = () => {
     </>
   );
 };
+
+export interface ILogged {
+  logged: boolean;
+}
 
 export default PokemonRoutes;
