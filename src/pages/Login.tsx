@@ -6,6 +6,7 @@ import { Button, Container } from "react-bootstrap";
 import { useEffect } from "react";
 import { ILogged } from "../routes/PokemonRoutes";
 import { getPokemons } from "../state/pokemon/actions";
+import pikachuImage from "../assets/pikachu.png"
 
 
 const Login : React.FC<ILogged> = ({ logged }) => {
@@ -32,7 +33,7 @@ const Login : React.FC<ILogged> = ({ logged }) => {
       <img
         width="220"
         height="220"
-        src="https://www.megaidea.net/wp-content/uploads/2022/01/Pikachu-3-1024x1024.png"
+        src={pikachuImage}
         alt=""
         style={{ marginBottom: "20px" }}
       />

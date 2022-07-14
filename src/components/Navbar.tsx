@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { ILogged } from "../routes/PokemonRoutes";
 import { AppDispatch, stateType } from "../state/store";
 import { logout } from "../state/user/userSlice";
+import logo from '../assets/pokelogo.png'
 
 
 const NavBar : React.FC<ILogged> = ({ logged }) => {
@@ -14,13 +15,12 @@ const NavBar : React.FC<ILogged> = ({ logged }) => {
     dispatch(logout());
   };
 
-  //TODO: Change img route
   return (
     <div>
       <Navbar bg="dark">
         <Navbar.Brand>
           <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/1026px-Pok%C3%A9_Ball_icon.svg.png"
+            src={logo}
             width="60"
             height="60"
             className="d-inline-block align-top"
