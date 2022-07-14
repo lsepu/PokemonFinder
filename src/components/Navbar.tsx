@@ -1,7 +1,7 @@
 import { Button, Container, Nav, Navbar, NavItem } from "react-bootstrap";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { AppDispatch } from "../state/store";
+import { AppDispatch, stateType } from "../state/store";
 import { logout } from "../state/user/userSlice";
 
 interface INavbar {
@@ -10,6 +10,7 @@ interface INavbar {
 
 const NavBar = ({ logged }: INavbar) => {
   const dispatch = useDispatch<AppDispatch>();
+  const { name } = useSelector((state: stateType) => state.user);
 
   const logoutUser = () => {
     dispatch(logout());
@@ -58,7 +59,7 @@ const NavBar = ({ logged }: INavbar) => {
               style={{ marginRight: "20px" }}
             >
               <Navbar.Text className="signed-user">
-                Signed in as: <b>test</b>
+                Signed in as: <b>{name}</b>
               </Navbar.Text>
               <Button onClick={logoutUser} variant="danger">
                 Logout
