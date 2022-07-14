@@ -1,5 +1,6 @@
 import React from "react";
 import { Badge, Card } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import { pokemonState } from "../state/pokemon/pokemonSlice";
 
 interface IPokemonCard {
@@ -7,8 +8,11 @@ interface IPokemonCard {
 }
 
 const PokemonCard: React.FC<IPokemonCard> = ({ pokemon }) => {
+
+  const navigate = useNavigate();
+
   return (
-    <Card className="card-styles" style={{ width: "18rem", marginBottom: "20px" }}>
+    <Card className="card-styles" style={{ width: "18rem", marginBottom: "20px" }} onClick={() => navigate(`/list/${pokemon.name}`)}>
       <Card.Img height="240" variant="top" src={pokemon.img} />
       <Card.Body>
         <Card.Title style={{ marginBottom: "20px" }}>{pokemon.name}</Card.Title>

@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
-import { Badge, Card, Col, Container, Row } from "react-bootstrap";
-import { useParams } from "react-router-dom";
+import { Badge, Button, Card, Col, Container, Row } from "react-bootstrap";
+import { useNavigate, useParams } from "react-router-dom";
 import { getTypes } from "../state/pokemon/actions";
 
 
 const Pokemon = () => {
+
+  const navigate = useNavigate();
+
   const { pokemon } = useParams();
   const [pokemonInfo, setPokemonInfo] = useState({
     name: "",
@@ -56,6 +59,9 @@ const Pokemon = () => {
           </Card>
         </Col>
       </Row>
+
+      <Button onClick={() => navigate("/list")} style={{marginTop: "25px"}} variant="primary" >Go back to list</Button>
+
     </Container>
   );
 };
