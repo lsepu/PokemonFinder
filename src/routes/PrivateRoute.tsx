@@ -1,9 +1,12 @@
 import { Navigate, Outlet } from "react-router-dom";
 
-//TODO: CHANGE ANY TYPE
-const PrivateRoute = ({ logged, redirectPath = "/login" } : any) => {
+interface IPrivateRoute {
+  logged: boolean;
+}
+
+const PrivateRoute = ({ logged }: IPrivateRoute) => {
   if (!logged) {
-    return <Navigate to={redirectPath} replace />;
+    return <Navigate to="/login" replace />;
   }
   return <Outlet />;
 };

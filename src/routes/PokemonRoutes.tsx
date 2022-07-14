@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import Navbar from "../components/Navbar";
+import NavBar from "../components/NavBar";
 import Login from "../pages/Login";
 import Pokemon from "../pages/Pokemon";
 import PokemonList from "../pages/PokemonList";
@@ -13,8 +13,8 @@ const PokemonRoutes = () => {
 
   return (
     <>
-      <Navbar logged={logged}/>
       <BrowserRouter>
+      <NavBar logged={logged}/>
         <Routes>
           <Route
             path="/"

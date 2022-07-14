@@ -1,4 +1,3 @@
-import React from "react";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../state/store";
 import { login } from "../state/user/userSlice";
