@@ -18,7 +18,7 @@ const PokemonRoutes = () => {
         <Routes>
           <Route
             path="/"
-            element={<Navigate to={logged ? "/search" : "/login"} replace />}
+            element={<Navigate to={logged ? "/list" : "/login"} replace />}
           />
           <Route element={<PrivateRoute logged={logged} />}>
             <Route path="/list" element={<PokemonList />} />
