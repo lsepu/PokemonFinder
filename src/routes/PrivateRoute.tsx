@@ -1,7 +1,8 @@
 import { Navigate, Outlet } from "react-router-dom";
 
-const PrivateRoute = ({ user, redirectPath = "/login" } : any) => {
-  if (!user) {
+//TODO: CHANGE ANY TYPE
+const PrivateRoute = ({ logged, redirectPath = "/login" } : any) => {
+  if (!logged) {
     return <Navigate to={redirectPath} replace />;
   }
   return <Outlet />;
