@@ -23,7 +23,7 @@ const PokemonRoutes = () => {
           <Route element={<PrivateRoute logged={logged} />}>
             <Route path="/list" element={<PokemonList />} />
             <Route path="/search" element={<PokemonSearch />} />
-            <Route path="/search/:pokemon" element={<Pokemon />} />
+            <Route path="/list/:pokemon" element={<Pokemon />} />
           </Route>
           <Route path="/login" element={<Login logged={logged}/>} />
           <Route

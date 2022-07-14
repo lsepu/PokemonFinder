@@ -8,7 +8,7 @@ interface IPokemonCard {
 
 const PokemonCard: React.FC<IPokemonCard> = ({ pokemon }) => {
   return (
-    <Card style={{ width: "18rem", marginBottom: "20px" }}>
+    <Card className="card-styles" style={{ width: "18rem", marginBottom: "20px" }}>
       <Card.Img height="240" variant="top" src={pokemon.img} />
       <Card.Body>
         <Card.Title style={{ marginBottom: "20px" }}>{pokemon.name}</Card.Title>

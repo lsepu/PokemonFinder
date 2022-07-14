@@ -4,6 +4,16 @@
   padding-right: 15px!important;
 }
 
+.card-styles{
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  cursor: pointer;
+  transition: transform .2s; 
+}
+
+.card-styles:hover{
+  transform: scale(1.05);
+}
+
 @media screen and (max-width: 450px) {
   .signed-user{
     display: none;

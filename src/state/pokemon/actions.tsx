@@ -31,7 +31,7 @@ const getAllPokemons = async () => {
 };
 
 //TODO: Change any
-const getTypes = (typesObject: any) => {
+export const getTypes = (typesObject: any) => {
   const types: any = [];
   typesObject.forEach((typeObj: any) => {
     types.push(typeObj.type.name);
