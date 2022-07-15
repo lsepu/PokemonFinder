@@ -6,11 +6,10 @@ import { Button, Container } from "react-bootstrap";
 import { useEffect } from "react";
 import { ILogged } from "../routes/PokemonRoutes";
 import { getPokemons } from "../state/pokemon/actions";
-import pikachuImage from "../assets/pikachu.png"
-
+import pikachuImage from "../assets/pikachu.png";
 
 const Login : React.FC<ILogged> = ({ logged }) => {
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch = useDispatch<any>();
   const navigate = useNavigate();
 
   //TODO: Resolve error

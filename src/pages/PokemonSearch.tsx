@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { Badge, Button, Card, Col, Container, Form, Row } from "react-bootstrap";
+import {
+  Badge,
+  Button,
+  Card,
+  Col,
+  Container,
+  Form,
+  Row,
+} from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { getTypes } from "../state/pokemon/actions";
 
@@ -36,15 +44,17 @@ const PokemonSearch = () => {
   };
 
   const searchPokemon = async () => {
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
-    if (response.status == 200) {
-      const formattedResponse = await response.json();
-      const pokemonData = {
-        name: formattedResponse.name,
-        types: getTypes(formattedResponse.types),
-        img: formattedResponse.sprites.front_default,
-      };
-      return pokemonData;
+    if (name) {
+      const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
+      if (response.status == 200) {
+        const formattedResponse = await response.json();
+        const pokemonData = {
+          name: formattedResponse.name,
+          types: getTypes(formattedResponse.types),
+          img: formattedResponse.sprites.front_default,
+        };
+        return pokemonData;
+      }
     }
     return null;
   };
@@ -66,7 +76,11 @@ const PokemonSearch = () => {
 
       {found && (
         <Row className="justify-content-md-center">
-          <Col sm style={{ display: "flex", justifyContent: "center" }} onClick={() => navigate(`/list/${name}`)}>
+          <Col
+            sm
+            style={{ display: "flex", justifyContent: "center" }}
+            onClick={() => navigate(`/list/${name}`)}
+          >
             <Card
               className="card-styles"
               style={{ width: "18rem", marginBottom: "20px" }}
