@@ -36,7 +36,7 @@ const Pokemon = () => {
   return (
     <Container style={{ textAlign: "center", marginTop: "60px" }}>
       
-      {pokemonInfo.name ? (
+      {pokemonInfo.name && (
         <Row className="justify-content-md-center">
           <Col sm style={{ display: "flex", justifyContent: "center" }}>
             <Card
@@ -62,8 +62,6 @@ const Pokemon = () => {
             </Card>
           </Col>
         </Row>
-      ) : (
-        <h2>Not found</h2>
       )}
 
       <Button
