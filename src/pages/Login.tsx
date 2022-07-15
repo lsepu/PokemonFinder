@@ -12,7 +12,6 @@ const Login : React.FC<ILogged> = ({ logged }) => {
   const dispatch = useDispatch<any>();
   const navigate = useNavigate();
 
-  //TODO: Resolve error
   const loginUser = () => {
     dispatch(login());
     dispatch(getPokemons());
